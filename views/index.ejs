@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>www.education.com</title>
+	<style>
+		ul{
+			list-style-type: none;
+			overflow: hidden;
+			border: 1px solid black;
+			background-color: green;
+		}
+		li{
+			float: left;
+		}
+		li a {
+		  display: block;
+		  color: brown;
+		  font-size: 22px;
+		  text-align: center;
+		  padding: 18px 20px;
+		  text-decoration: none;
+		}
+		li a:hover:not(.active) {
+  			background-color: black;
+		}
+		li a.active{
+			color: white;
+			background-color: purple;
+		}
+		.runDiv{
+			height: 200px;
+			width: 50%;
+			background-color: skyblue;
+			border-radius: 40px 10px;
+		}
+input[type=text] {
+  width: 130px;
+  color: black;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: rebeccapurple;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+	</style>
+</head>
+<body bgcolor="#798020">
+	<h1><center>Home </center></h1>
+
+	<form action= "/search" method="POST"> 
+        <div class="searchBox">
+            <input class="searchInput" class="material-icons" type="text" name="search" , placeholder="Search....." >
+            <inupt class="searchButton" type="submit">
+        </div>
+	</form>
+	
+	<ul>
+		<li><a class="active" href="/home">Home</a></li>
+		<li><a href="/user_login">Login</a></li>
+	  	<li><a href="/user_signup">Signup</a></li>
+	</ul>
+
+	<div class="all_blogs"> <h1><center> All Datas</center></h1><br><br>
+		<% for (let i of data) { %>
+		<center><div class="runDiv">
+			<h3> <%= i._id %> </h3>
+			<h3> Firstname: <%= i.firstname %> </h3>
+			<h3> Lastname  : <%= i.lastname %> </h3>
+			<p> Rank :  <%= i.rank %> </p>
+			<p> Status. :  <%= i.status %> </p>
+		</div></center>
+		<% } %>
+	</div>
+
+
+</body>
+</html>
