@@ -17,8 +17,8 @@ const add_detail= async(req,res)=>{
        return res.sendFile(path.join(__dirname, '../' + '/views/success.html'))
     })
    .catch((err)=>{
-       console.log(err)
-       res.send(err.message)
+       console.log(err.message)
+       return res.sendFile(path.join(__dirname, '../' + '/views/error.html'))
    })
 }
 
@@ -28,7 +28,7 @@ const all_data= async(req,res)=>{
    .then((all_data)=>{
        if(all_data.length){
            console.log(all_data)
-           return res.render('index.ejs', {data: all_data})        //    res.send(all_data)
+           return res.render('b.ejs', {data: all_data})        //    res.send(all_data)
        }else{
            res.send("no found data.........")
        }

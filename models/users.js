@@ -22,6 +22,9 @@ let user_schema= new mongoose.Schema({
    phone: {
       type:Number,
       required: true,
+   },
+   image: {
+      type: String
    }
 }, {timestamps: true});     
 

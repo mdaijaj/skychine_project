@@ -4,13 +4,14 @@
 	<title>www.education.com</title>
 	<style>
 		ul{
-			list-style-type: none;
+			list-style-type: row;
+			flex-basis: auto; 
 			overflow: hidden;
 			border: 1px solid black;
 			background-color: green;
 		}
 		li{
-			float: left;
+			float: right;
 		}
 		li a {
 		  display: block;
@@ -29,10 +30,21 @@
 		}
 		.runDiv{
 			height: 200px;
-			width: 50%;
+			width: 30%;
 			background-color: skyblue;
 			border-radius: 40px 10px;
 		}
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			}
+
+		.item {
+			flex: 0 32%;
+			height: 100px;
+			margin-bottom: 2%; /* (100-32*3)/2 */
+			}
 input[type=text] {
   width: 130px;
   color: black;
@@ -49,6 +61,27 @@ input[type=text] {
   transition: width 0.4s ease-in-out;
 }
 
+
+.flex-container2{
+		/*align-items: center;
+		display: flex; */
+		height: 200px;
+        width: 100%;
+		display: flex;
+		flex-wrap: row;
+		/* background-color: pink;
+		border: solid 2px green; */
+	}
+	.flex-container2 div{
+		background-color: hsl(54, 65%, 70%);
+		width: 270px;
+		margin: 5px;
+		padding: 20px;
+		text-align: center;
+		line-height: 10px;
+		font-size: 18px;
+		border-radius: 20px;
+	}
 input[type=text]:focus {
   width: 100%;
 }
@@ -69,17 +102,17 @@ input[type=text]:focus {
 		<li><a href="/user_login">Login</a></li>
 	  	<li><a href="/user_signup">Signup</a></li>
 	</ul>
-
-	<div class="all_blogs"> <h1><center> All Datas</center></h1><br><br>
-		<center><div class="runDiv">
-			<h3> <%= data._id %> </h3>
-			<h3> Firstname: <%= data.firstname %> </h3>
-			<h3> Lastname  : <%= data.lastname %> </h3>
-			<p> Rank :  <%= data.rank %> </p>
-			<p> Status. :  <%= data.status %> </p>
-		</div></center>
+	<div class="flex-containers">  Skyniche Clients</h1><br><br>
+		<div class="flex-container2">
+			<% for (let i of data) { %>
+				<div>
+					<h3> <%= i._id %> </h3>
+					<h3> client_name <%= i.client_name %> </h3>
+					<h3> email  : <%= i.email %> </h3>
+				</div>
+			<% } %>
+		</div>
 	</div>
-
 
 </body>
 </html>

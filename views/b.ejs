@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>www.worldgovt.com</title>
+	<link rel="icon" type="image/jpg" href="https://ichef.bbci.co.uk/images/ic/720x405/p086qbqx.jpg" >
+	<style>
+	.caption{
+		height: 150px;
+		width: 100%;
+		background: gray;
+		padding: 10px;
+		box-sizing: border-box;
+		border: solid 2px black;
+	}
+	.multimedia{
+		display: flex;
+		flex-wrap: row;
+		background-color: chocolate;
+		border: solid 2px green;
+		height: 360px;
+	}
+	.multimedia div{
+		padding: 10px;
+		background-color: white;
+		width: 350px;
+		margin: 40px 10px  ;
+		text-align: center;
+		line-height: 10px;
+		font-size: 13px;
+		border-radius: 10px;
+		
+	}
+	.image_div{
+		border-radius: 10px;
+	}
+	.aijaj{
+		height: 10px;
+		width: 100px;
+		background-color: red;
+		
+	}
+	.flex-container2{
+		/*align-items: center;
+		display: flex; */
+		height: 200px;
+      width: 100%;
+		display: flex;
+		flex-wrap: row;
+		/* background-color: pink;
+		border: solid 2px green; */
+	}
+	.flex-container2 div{
+		background-color: hsl(54, 65%, 70%);
+		width: 270px;
+		margin: 5px;
+		padding: 20px;
+		text-align: center;
+		line-height: 10px;
+		font-size: 18px;
+		border-radius: 20px;
+	}
+	
+	</style>
+
+</head>
+<body>
+
+	<div><h1><center> Skyniche Clients</center></h1><br><br>
+	<div class="multimedia">
+		<% for (let i of data) { %>
+
+			<div class="flex-container2">
+				<span class="image_div">
+					<% if (i.url != '' ){ %>
+						<!-- <img src= <%= i.url %> alt="image" style="width: 180px; height: 280px;" alt="image"></img> -->
+						<img src="https://www.jagranimages.com/images/newimg/14062020/14_06_2020-sushant_singh_rajput_20390169.jpg" style="width: 150px; height: 120px; border-radius: 50%; border-style: double;"></img> 
+					<% } else { %>
+						<!-- <img src="https://www.jagranimages.com/images/newimg/14062020/14_06_2020-sushant_singh_rajput_20390169.jpg" style="width: 100px; height: 180px;" alt="image"></img> -->
+					<% } %>
+				</span>
+				
+				<h3> <%= i.client_name %> </h3><br>
+				<p> <%= i.email %> </p><br>
+			</div>
+				<% } %>
+			</div>
+	</div>
+
+
+	<div class="caption">
+		<center><h1>Feedback and all information Developer</h1></center>
+		<p style="text-align: center">Developer Md A!?@? &copy; 2018</p>
+	</div>
+</body>
+</html>
